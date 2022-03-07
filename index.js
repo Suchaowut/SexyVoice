@@ -16,13 +16,13 @@ client.on('ready', () => {
       status: 'dnd'
   })
 
-	/*const channel = client.channels.cache.get("883278397239853136");
+	const channel = client.channels.cache.get("883278397239853136");
 	if (!channel) return;
 	const embed = new Discord.MessageEmbed()
 		.setDescription(`SexyVoice is **Online**\n\n***สามารถสร้างห้องได้แล้ว ณ ตอนนี้***`)
 		.setTimestamp()
 		.setColor('#198c19');
-	channel.send(embed);*/
+	channel.send(embed);
 	
 	//  Command-Base
 	const baseFile = 'command-base.js';
