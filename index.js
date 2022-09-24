@@ -56,4 +56,4 @@ jointocreateprivate(client);
 const jointocreatetalk = require("./jointocreate/CreateTalk.js");
 jointocreatetalk(client);
 
-client.login(process.env.token);
+client.login('ODc4OTg3OTI2Njg2NTU2MjAy.GtKA95.bvgrKVPll84yu-D-EEETfC0BNDSpbXpsufCRQI');
