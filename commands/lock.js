@@ -11,7 +11,7 @@ module.exports = {
       const channel = guild.channels.cache.get(channelId)
       if (!channel) { message.reply('ไม่พบห้องค่ะ').then(msg => { msg.delete({ timeout: 5000 }); }); return }
 
-      const roleId = '943028408416362497'
+      const roleId = '840832663022469182'
       const role = guild.roles.cache.get(roleId)
       if (!role) { message.reply('ไม่พบยศนี้นะคะ').then(msg => { msg.delete({ timeout: 5000 }); }); return }
       
