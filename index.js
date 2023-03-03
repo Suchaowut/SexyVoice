@@ -6,21 +6,27 @@ require('dotenv').config();
 const config = require("./config.json");
 
 client.on('ready', () => {
-  console.log('The client is ready!');
-
-  client.user.setPresence({
-      activity: { 
-          name: 'SexyVoice',
-          type: 'WATCHING'
-      },
-      status: 'dnd'
-  })
+	console.log('The client is ready!');
+    
+	setInterval(() => {
+		let days = Math.floor(client.uptime / 86400000);
+		let hours = Math.floor(client.uptime / 3600000) % 24;
+     	let minutes = Math.floor(client.uptime / 60000) % 60;
+      	let uptime = `${days} วัน, ${hours} ชั่วโมง, ${minutes} นาที`;
+      	client.user.setPresence({
+        	  activity: { 
+            	  name: `ออนไลน์: ${uptime}`,
+ 	             type: 'WATCHING'
+    	      },
+        	  status: 'dnd'
+ 	     })
+    	}, 10000);
 
 	const channel = client.channels.cache.get("883278397239853136");
 	if (!channel) return;
 	const embed = new Discord.MessageEmbed()
 		.setDescription(`SexyVoice is **Online**\n\n***สามารถสร้างห้องได้แล้ว ณ ตอนนี้***`)
-		.setTimestamp()
+    	.setTimestamp()
 		.setColor('#198c19');
 	channel.send(embed);
 	
@@ -40,7 +46,6 @@ client.on('ready', () => {
 			}
 		}
 	};
-
 	readCommands('commands');
 })
 
